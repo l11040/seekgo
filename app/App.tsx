@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -9,46 +9,36 @@ import {
   View,
 } from 'react-native';
 
-import Section from './components/Section';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-function App(): React.JSX.Element {
+import SplashScreen from 'react-native-splash-screen';
+
+const App = (): React.JSX.Element => {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }, []);
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: isDarkMode ? '#000' : '#fff',
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">test</Section>
-          <Section title="Debug">test</Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
+    <SafeAreaView style={[backgroundStyle, styles.container]}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <ScrollView>
+        <View>
+          <Text>Welcome to the App!</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  highlight: {
-    fontWeight: '700',
+  container: {
+    flex: 1,
   },
 });
 
