@@ -1,15 +1,9 @@
 import React, {useEffect} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {SafeAreaView} from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
+import {Header} from './components/Header';
+import {Layout} from './components/Layout';
 
 const App = (): React.JSX.Element => {
   useEffect(() => {
@@ -18,28 +12,13 @@ const App = (): React.JSX.Element => {
     }, 2000);
   }, []);
 
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? '#000' : '#fff',
-  };
-
   return (
-    <SafeAreaView style={[backgroundStyle, styles.container]}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView>
-        <View>
-          <Text>Welcome to the App!</Text>
-        </View>
-      </ScrollView>
+    <SafeAreaView>
+      <Layout>
+        <Header />
+      </Layout>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
