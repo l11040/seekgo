@@ -13,8 +13,9 @@ import SplashScreen from 'react-native-splash-screen';
 
 const App = (): React.JSX.Element => {
   useEffect(() => {
-    // 앱 초기화 후 스플래시 화면 숨기기
-    SplashScreen.hide();
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
   }, []);
 
   const isDarkMode = useColorScheme() === 'dark';
