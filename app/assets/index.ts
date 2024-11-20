@@ -1,4 +1,5 @@
 import PersonIcon from './icons/person.svg';
+import SearchIcon from './icons/search.svg';
 
 const Assets = {
   Images: {
@@ -8,6 +9,7 @@ const Assets = {
   },
   Icons: {
     Person: PersonIcon,
+    Search: SearchIcon,
   },
 };
 
