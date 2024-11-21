@@ -12,9 +12,10 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F2F2F2',
     flexDirection: 'row',
     alignItems: 'center',
-    columnGap: 8,
+    columnGap: 4,
   },
   searchText: {
-    fontSize: FontSizes.Large,
+    fontSize: FontSizes.Medium,
+    fontWeight: 300,
   },
 });
