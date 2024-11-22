@@ -1,11 +1,15 @@
 import React, {ReactNode} from 'react';
 
-import {View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import {styles} from './Layout.styles';
 
 type LayoutProps = {children: ReactNode};
 
 const Layout = ({children}: LayoutProps) => {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <SafeAreaView>
+      <View style={styles.container}>{children}</View>
+    </SafeAreaView>
+  );
 };
 export default Layout;
