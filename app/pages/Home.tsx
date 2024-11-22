@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {Header} from '../../components/Header';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import {Layout} from '../../components/Layout';
+import {Header} from '../components/Header';
+import SearchBar from '../components/SearchBar/SearchBar';
+import {Layout} from '../components/Layout';
 
 function HomeScreen() {
   return (

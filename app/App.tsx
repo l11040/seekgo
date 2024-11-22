@@ -2,13 +2,13 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './pages/Home/Home';
+import HomeScreen from './pages/Home';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Assets from './assets';
-import FindScreen from './pages/Find/Find';
-import ReceivedScreen from './pages/Received/Received';
-import ChatScreen from './pages/Chat/Chat';
-import CommunityScreen from './pages/Community/Community';
+import FindScreen from './pages/Find';
+import ReceivedScreen from './pages/Received';
+import ChatScreen from './pages/Chat';
+import CommunityScreen from './pages/Community';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const Tab = createBottomTabNavigator();
